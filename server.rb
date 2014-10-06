@@ -1,4 +1,5 @@
 require 'data_mapper'
+require 'sinatra'
 
 env = ENV["RACK_ENV"] || "development"
 # we're telling datamapper to use a postgres database on LocalHost. 
@@ -13,3 +14,8 @@ DataMapper.finalize
 
 # However, the database tables don't exist yet. Let's tell datamapper to create them.
 DataMapper.auto_upgrade!
+
+get '/' do
+	@links = Link.all
+	erb :index
+end
