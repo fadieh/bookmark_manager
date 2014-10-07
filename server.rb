@@ -1,5 +1,6 @@
 require 'data_mapper'
 require 'sinatra'
+# server is the central thing. 
 
 env = ENV["RACK_ENV"] || "development"
 # we're telling datamapper to use a postgres database on LocalHost. 
@@ -8,6 +9,7 @@ env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}") # connection string
 
 require './lib/link' # needs to be done after datamapper is initialised
+require './lib/tag'
 
 # After declaring your models, you should finalise them
 DataMapper.finalize
@@ -23,6 +25,9 @@ end
 post '/links' do
 	url = params["url"]
 	title = params["title"]
-	Link.create(:url => url, :title => title)
+	tags = params["tags"].split(" ").map do |tag|
+	Tag.first_or_create(:text => tag)
+end
+	Link.create(:url => url, :title => title, :tags => tags)
 	redirect to('/')
 end
