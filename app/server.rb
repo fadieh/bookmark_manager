@@ -35,6 +35,7 @@ get '/tags/:text' do
 end
 
 get '/users/new' do
+	@user = User.new
 	# note the view is in views/users/new.erb
 	# we need the quotes because otherwise
 	# ruby would divide the symbol :users by the
@@ -58,6 +59,21 @@ post '/users' do
 		flash.now[:errors] = @user.errors.full_messages
 		erb :"users/new"
 	end
+end
 
+post '/sessions' do
+	email, password = params[:email], params[:password]
+	user = User.authenticate(email, password)
+	if user
+		session[:user_id] = user.id
+		redirect to('/')
+	else
+		flash[:errors] = ["The email or password is incorrect"]
+		erb :"sessions/new"
+	end
+end
+
+get '/sessions/new' do
+	erb :"sessions/new"
 end
 
