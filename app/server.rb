@@ -3,11 +3,15 @@ require 'sinatra'
 require './lib/link'
 require './lib/tag'
 require './lib/user'
+require 'rack-flash'
+
 require_relative 'helpers/application'
 require_relative 'data_mapper_setup'
 
 enable :sessions
 set :session_secret, 'super secret'
+
+use Rack::Flash
 
 get '/' do
 	@links = Link.all
@@ -39,10 +43,25 @@ get '/users/new' do
 end
 
 post '/users' do
-	user = User.create(:email => params[:email],
+	# we just initialise the object
+	# without saving it. It may be invalid
+	@user = User.create(:email => params[:email],
 						:password => params[:password],
 						:password_confirmation => params[:password_confirmation])
-	session[:user_id] = user.id
-	redirect to('/')
+	# lets try saving it
+	# if the model is valid
+	# it will be saved
+	if @user.save
+		session[:user_id] = @user.id
+		redirect to('/')
+		# if it's not valid,
+		# we'll show the same
+		# form again
+
+	else 
+		flash[:notice] = "Sorry, your passwords don't match"
+		erb :"users/new"
+	end
+
 end
 
