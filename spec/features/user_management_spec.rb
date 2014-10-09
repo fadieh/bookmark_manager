@@ -76,3 +76,14 @@ feature "User signs up" do
 	end
 
 end
+
+feature "User clicks forgotten password" do
+
+	scenario "enter their email into the forgotten pass form" do
+		visit '/'
+		expect(page).to have_content("Forgotten your password?")
+		click_button "Forgot password?"
+		expect(page).to have_content("Please enter your email")
+	end
+
+end
