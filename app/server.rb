@@ -4,6 +4,7 @@ require './lib/link'
 require './lib/tag'
 require './lib/user'
 require 'rack-flash'
+require 'sinatra-partial'
 
 require_relative 'helpers/application'
 require_relative 'data_mapper_setup'
