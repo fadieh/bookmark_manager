@@ -9,17 +9,19 @@
 
 
 	<section id="indexbody">
-		<section id="signin">
-			Sign in
-		</section><br>
-		<section id="signup">
-			Sign up
-		</section>
+		<div id="new-link">
+			<form action="/links" method="post">
+				Url: <input type="text" name="url"><br>
+				Title: <input type="text" name="title"><br>
+				Tags:<input type="text" name="tags"><br>
+				<input type="submit" value="Add link">
+			</form>
+		</div>
 	</section>
 
 
 <ul>
-	<h1>Forgotten your password?</h1>
+	<p>Forgotten your password?</p>
 		<form action="/forgotten_password">
 		<button type="submit" value="Forgot password?">Forgot password?</button>
 	</form>
@@ -28,14 +30,5 @@
     <li><a href="<%= link.url %>"><%= link.title %></a></li>
   <% end %>
 </ul>
-
-<div id="new-link">
-	<form action="/links" method="post">
-		Url: <input type="text" name="url">
-		Title: <input type="text" name="title">
-		<input type="submit" value="Add link">
-		<input type="text" name="tags">
-	</form>
-</div>
 
 </body>
