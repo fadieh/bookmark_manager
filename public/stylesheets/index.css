@@ -3,9 +3,9 @@ body {
 }
 
 #indexbody {
-	height: 372px;
+	height: 100%;
 	width: 100%;
-	background-color: #FF7C7A;
+	background-color: #998C86;
 	position: relative;
 	left: 0px;
 	top: 0px;
@@ -22,7 +22,7 @@ body {
 #signin {
 	height: 68px;
 	background-color: #75CC4D;
-	width: 472px;	
+	width: 292px;	
 	display: -webkit-flex;
 	display: flex;
   -webkit-flex-direction: row
@@ -32,7 +32,27 @@ body {
   -webkit-justify-content: center;
   justify-content: center;
   color: white;
-  font-size: 42px;
+  font-size: 26px;
   border-radius: 6px;
   font-family: "proxima-nova-soft",sans-serif;
+  text-transform: uppercase;
+}
+
+#signup {
+	height: 68px;
+	background-color: #75CC4D;
+	width: 292px;	
+	display: -webkit-flex;
+	display: flex;
+  -webkit-flex-direction: row
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  color: white;
+  font-size: 26px;
+  border-radius: 6px;
+  font-family: "proxima-nova-soft",sans-serif;
+  text-transform: uppercase;
 }
