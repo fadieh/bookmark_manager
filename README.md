@@ -28,4 +28,4 @@ Run the server locally using IRB
 rackup
 ```
 
-Open localhost:3000 in your browser
+Open localhost:9292 in your browser
