@@ -2,6 +2,8 @@
 
 **Bookmark Manager is a challenge we undertook in Week 5 at Makers Academy to understand the use of Relational Databases.**
 
+![Alt text](https://raw.githubusercontent.com/fadieh/bookmark_manager/master/public/images/indexscreenshot.png)
+
 Bookmark Manager does the following:
 
 - Sign up for an account.
