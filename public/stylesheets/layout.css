@@ -17,7 +17,7 @@ body {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
-  height: 276px;
+  height: 138px;
   width: 100%;
   left: 0px;
   top: 0px;
@@ -25,11 +25,11 @@ body {
   border: 0px;
   padding: 0px;
   border-bottom-style: solid;
-  border-bottom-width: 16px;
+  border-bottom-width: 8px;
   border-bottom-color: #4D88B2;
 }
 
 #logo {
-	width: 225px;
-	height: 180.5px;
+	width: 112.5px;
+	height: 91px;
 }
