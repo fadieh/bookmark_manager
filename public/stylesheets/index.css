@@ -7,8 +7,6 @@ body {
 	width: 100%;
 	background-color: #B24544;
 	position: relative;
-/*	left: 0px;
-	top: 0px;*/
 	display: -webkit-flex;
 	display: flex;
   	-webkit-flex-direction: row
@@ -60,5 +58,10 @@ body {
 	text-align: center;
 	font-family: "proxima-nova-soft",sans-serif;
 	text-decoration: none;
-	line-height: 50%;
+	line-height: 100%;
+	width: 30%;
+	border: 10%;
+	height: 150px;
+	border-left: 50px;
+	float: left;
 }
