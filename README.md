@@ -1,6 +1,6 @@
 # Bookmark Manager
 
-**Bookmark Manager is a challenge we undertook in Week 5 at Makers Academy to understand the use of Relational Databases.**
+**Bookmark Manager is a challenge we undertook in Week 4 at Makers Academy to understand the use of Relational Databases.**
 
 ![Alt text](https://raw.githubusercontent.com/fadieh/bookmark_manager/master/public/images/indexscreenshot.png)
 
