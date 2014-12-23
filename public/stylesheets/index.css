@@ -3,20 +3,20 @@ body {
 }
 
 #indexbody {
-	height: 550px;
+	height: 250px;
 	width: 100%;
 	background-color: #B24544;
 	position: relative;
 	left: 0px;
 	top: 0px;
-	display: -webkit-flex;
+/*	display: -webkit-flex;
 	display: flex;
   -webkit-flex-direction: row
   flex-direction: row;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: center;
-  justify-content: center;
+  justify-content: center;*/
 }
 
 .forms {
@@ -37,17 +37,18 @@ body {
 }
 
 #title {
-
+	float: left;
 }
 
 #tags {
-
+	float: right;
 }
 
 #submit {
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 	color: white;
+	float: right;
 	background-color: #4D99CC;
 	text-transform: uppercase;
 	font-size: 24px;
@@ -66,4 +67,9 @@ body {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
+}
+
+#links {
+	list-style-type: none;
+
 }

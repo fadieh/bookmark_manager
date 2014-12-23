@@ -11,23 +11,22 @@
 	<section id="indexbody">
 		<div id="new-link">
 			<form action="/links" method="post">
-				<input id="uri" class="forms" type="text" name="url" placeholder="Insert link here"><br>
-				<input id="title" class="forms" type="text" name="title" placeholder="Title"><br>
-				<input id="tags" class="forms" type="text" name="tags" placeholder="Tags"><br>
+				<input id="uri" class="forms" type="text" name="url" placeholder="Insert link here">
+				<input id="title" class="forms" type="text" name="title" placeholder="Title">
+				<input id="tags" class="forms" type="text" name="tags" placeholder="Tags">
 				<input id="submit" class="forms" type="submit" value="Add link" placeholder="Add Link">
 			</form>
 		</div>
 	</section>
 
-
-<ul>
-	<p>Forgotten your password?</p>
-		<form action="/forgotten_password">
-		<button type="submit" value="Forgot password?">Forgot password?</button>
-	</form>
+	<ul>
+<!-- 		<p>Forgotten your password?</p>
+			<form action="/forgotten_password">
+				<button type="submit" value="Forgot password?">Forgot password?</button>
+			</form> -->
 	
   <% @links.each do |link| %>
-    <li><a href="<%= link.url %>"><%= link.title %></a></li>
+    <li id="links"><a href="<%= link.url %>"><%= link.title %></a><br><%= link.url %><br></li>
   <% end %>
 </ul>
 
