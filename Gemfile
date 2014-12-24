@@ -8,6 +8,7 @@ source 'https://rubygems.org'
 	gem 'mailgun-ruby'
 
 group :development, :test do
+	
 	gem 'rspec'
 	gem 'shotgun'
 	gem 'launchy'
