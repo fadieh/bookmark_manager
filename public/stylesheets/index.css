@@ -1,3 +1,9 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
 body {
 	margin: 0;
 }
@@ -15,6 +21,28 @@ body {
   	align-items: center;
   	-webkit-justify-content: center;
   	justify-content: center;
+}
+
+#menu {
+  	background-color: #4D88B2;
+  	height: 48px;
+  		display: -webkit-flex;
+	display: flex;
+  	-webkit-flex-direction: row
+  	flex-direction: row;
+  	-webkit-align-items: center;
+  	align-items: center;
+  	-webkit-justify-content: center;
+  	justify-content: center;
+}
+
+.buttons {
+	width: 120px;
+	margin: 2px;
+	color: white;
+	font-family: "proxima-nova-soft",sans-serif;
+	font-size: 12px;
+	background-color: transparent;
 }
 
 .forms {

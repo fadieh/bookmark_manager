@@ -6,6 +6,22 @@
 
 <body>
 
+	<section id="menu">
+
+	<form action="/forgotten_password">
+				<button class="buttons" type="submit" value="Forgot password?">Forgot password?</button>
+			</form>
+
+			<form action="/sessions/new">
+				<button class= "buttons" type="submit" value="Sign in">Sign In</button>
+			</form>
+
+			<form action="/users/new">
+				<button class="buttons" type="submit" value="Sign up">Sign Up</button>
+			</form>
+
+	</section>
+
 	<section id="indexbody">
 		<div id="new-link">
 			<form action="/links" method="post">
@@ -16,11 +32,6 @@
 			</form>
 		</div>
 	</section>
-
-		<p>Forgotten your password?</p>
-			<form action="/forgotten_password">
-				<button type="submit" value="Forgot password?">Forgot password?</button>
-			</form>
 	
   <% @links.each do |link| %>
     <li id="links"><a href="<%= link.url %>"><h2><%= link.title %></a></h2><h4><%= link.url %></h4><br></li>

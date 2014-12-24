@@ -17,16 +17,13 @@ body {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
-  height: 138px;
+  height: 148px;
   width: 100%;
   left: 0px;
   top: 0px;
   position: relative;
   border: 0px;
   padding: 0px;
-  border-bottom-style: solid;
-  border-bottom-width: 8px;
-  border-bottom-color: #4D88B2;
 }
 
 #logo {
