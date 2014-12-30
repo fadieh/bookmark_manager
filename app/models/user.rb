@@ -38,4 +38,22 @@ class User
 		end
 	end
 
+	def send_reset_email
+		RestClient.post "https://api:key-9697e2ab8b43fcf3bcef4b16a489d1fc"\
+  		"@api.mailgun.net/v2/sandbox4e7aa7e546fe470fa8374cfef666b223.mailgun.org/messages", 
+		:from => "Team <postmaster@sandbox4e7aa7e546fe470fa8374cfef666b223.mailgun.org>",
+		:to => "#{self.email}",
+		:subject => "Reset your password",
+		:text => "Here is your password token.<br>
+				#{self.password_token}<br>
+				Use this token to reset your password at the following link:<br>
+				http://localhost:9292/users/change_password"
+	end
+
+	def update_token
+		self.password_token = (1..64).map{ ('A'..'Z').to_a.sample }.join
+		self.token_time_stamp = Time.now
+		self.save!
+	end
+
 end

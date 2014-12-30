@@ -28,3 +28,14 @@ end
 get '/users/reset_password' do
 	erb :"users/reset_password"
 end
+
+post '/users/reset_password' do
+	user = User.first(:email => params[:email])
+	if user
+		user.update_token
+		user.send_reset_email
+		flash[:notice] = "Your email is on it's way to you!"
+	else
+		flash[:notice] = "Sorry we do not recognise that email address. Please try again."
+	end
+end
