@@ -4,13 +4,6 @@ class User
 
 	include DataMapper::Resource
 
-	# this is datamapper's method of validating the model
-	# The model will not be saved unless both password
-	# and password_confirmation are the same
-	# read more about it in the documentation
-	# http://datamapper.org/docs/validations.html
-	# validates_uniqueness_of :email
-
 	property :id, Serial
 	property :email, String, :unique => true, :message => "This email is already taken"
 	property :password_digest, Text
@@ -44,10 +37,10 @@ class User
 		:from => "Team <postmaster@sandbox4e7aa7e546fe470fa8374cfef666b223.mailgun.org>",
 		:to => "#{self.email}",
 		:subject => "Reset your password",
-		:text => "Here is your password token.<br>
-				#{self.password_token}<br>
-				Use this token to reset your password at the following link:<br>
-				http://localhost:9292/users/change_password"
+		:text => "Here is your password token.
+#{self.password_token}
+Use this token to reset your password at the following link:
+http://localhost:9292/users/change_password"
 	end
 
 	def update_token
