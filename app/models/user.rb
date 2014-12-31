@@ -40,7 +40,7 @@ class User
 		:text => "Here is your password token.
 #{self.password_token}
 Use this token to reset your password at the following link:
-http://localhost:9292/users/change_password"
+http://localhost:9292/users/change_password/#{self.password_token}/#{self.email}"
 	end
 
 	def update_token

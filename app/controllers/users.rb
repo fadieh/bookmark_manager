@@ -26,7 +26,29 @@ post '/users/reset_password' do
 		user.update_token
 		user.send_reset_email
 		flash[:notice] = "Your email is on it's way to you!"
+		redirect to('/users/reset_password')
 	else
 		flash[:notice] = "Sorry we do not recognise that email address. Please try again."
+	end
+end
+
+get '/users/change_password/:token/:email' do
+	user = User.first(:email => params[:email])
+	@user = user
+	if params[:token] == user.password_token
+		erb :"users/change_password"
+	else
+		flash[:notice] = "You do not have "
+	end
+end
+
+post '/users/change_password' do
+	user = User.first(:email => params[:email])
+	if user
+		user.update(:password => params[:password],
+				:password_confirmation => params[:password_confirmation])
+		flash[:notice] = "You have updated your password"
+	else
+		flash[:notice] = "Sorry, doesn't match"
 	end
 end
