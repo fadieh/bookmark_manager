@@ -37,6 +37,7 @@
     <li id="links"><a href="<%= link.url %>"><h2><%= link.title %></a></h2><h4><%= link.url %></h4><br></li>
     <a href="/upvote/<%= link.id %>">Upvote</a>
     <a href="/downvote/<%= link.id %>">Downvote</a>
+    <a href="/delete/<%= link.id %>">Delete Link</a>
     <%= link.votes %>
     </form>
   <% end %>

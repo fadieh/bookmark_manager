@@ -18,4 +18,9 @@ class Link
 		self.save
 	end
 
+	def delete
+		self.destroy
+		self.save
+	end
+
 end

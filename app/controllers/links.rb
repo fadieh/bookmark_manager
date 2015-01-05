@@ -19,3 +19,9 @@ get '/downvote/:id' do
 	link.downvote
 	redirect '/'
 end
+
+get '/delete/:id' do
+	link = Link.first(:id => params[:id])
+	link.delete
+	redirect '/'
+end
