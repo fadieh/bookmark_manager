@@ -7,3 +7,9 @@ end
 	Link.create(:url => url, :title => title, :tags => tags)
 	redirect to('/')
 end
+
+get '/upvote/:id' do
+	link = Link.first(:id => params[:id])
+	link.upvote
+	redirect '/'
+end
