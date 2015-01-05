@@ -13,3 +13,9 @@ get '/upvote/:id' do
 	link.upvote
 	redirect '/'
 end
+
+get '/downvote/:id' do
+	link = Link.first(:id => params[:id])
+	link.downvote
+	redirect '/'
+end

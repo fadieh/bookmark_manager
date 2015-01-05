@@ -14,7 +14,7 @@ class Link
 	end
 
 	def downvote
-		self.votes += 1
+		self.votes -= 1
 		self.save
 	end
 
